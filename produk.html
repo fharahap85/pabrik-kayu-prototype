@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Katalog Kayu — Serat Jati Nusantara</title>
+  <meta name="description" content="Katalog balok, papan, kaso, decking, plywood, dan moulding dengan harga pabrik.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="produk">
+  <header id="site-header" class="site-header"></header>
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / Katalog</nav>
+        <h1>Katalog kayu</h1>
+        <p>Harga pabrik loco Jepara, belum termasuk ongkos kirim. Pilih produk untuk melihat ukuran dan menambahkannya ke daftar penawaran.</p>
+      </div>
+    </section>
+
+    <div class="container catalog">
+      <aside class="filters" id="filters" aria-label="Filter produk">
+        <div class="field">
+          <label for="q">Cari produk</label>
+          <input class="input" type="search" id="q" placeholder="Contoh: balok kamper">
+        </div>
+        <fieldset><legend>Kategori</legend><div id="f-cat"></div></fieldset>
+        <fieldset><legend>Jenis kayu</legend><div id="f-species"></div></fieldset>
+        <fieldset><legend>Grade</legend><div id="f-grade"></div></fieldset>
+        <fieldset>
+          <legend>Ketersediaan</legend>
+          <label class="check"><input type="checkbox" id="f-ready"> Hanya yang siap kirim</label>
+        </fieldset>
+        <button class="btn btn-ghost btn-sm btn-block" type="button" id="reset">Hapus semua filter</button>
+      </aside>
+
+      <section aria-labelledby="result-title">
+        <h2 id="result-title" class="sr-only">Hasil</h2>
+        <div class="toolbar">
+          <button class="btn btn-ghost btn-sm filter-toggle" type="button" aria-controls="filters" aria-expanded="false" id="filter-toggle">Filter</button>
+          <p class="result-count" id="count" aria-live="polite"></p>
+          <label class="check" for="sort">Urutkan
+            <select class="input" id="sort" style="width:auto">
+              <option value="populer">Paling populer</option>
+              <option value="termurah">Harga terendah</option>
+              <option value="termahal">Harga tertinggi</option>
+              <option value="nama">Nama A–Z</option>
+            </select>
+          </label>
+        </div>
+        <div class="active-filters" id="chips"></div>
+        <div class="pgrid" id="grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/produk.js"></script>
+</body>
+</html>

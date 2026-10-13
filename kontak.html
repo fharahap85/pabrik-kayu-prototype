@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak — Serat Jati Nusantara</title>
+  <meta name="description" content="Alamat, jam operasional, dan formulir kontak pabrik kayu di Jepara.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="kontak">
+  <header id="site-header" class="site-header"></header>
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / Kontak</nav>
+        <h1>Hubungi pabrik</h1>
+        <p>Kunjungi pabrik untuk melihat stok langsung, atau kirim pertanyaan lewat formulir.</p>
+      </div>
+    </section>
+
+    <div class="container contact-grid">
+      <div>
+        <div class="info-block">
+          <h3>Alamat pabrik</h3>
+          <p id="c-address"></p>
+        </div>
+        <div class="info-block">
+          <h3>Jam operasional</h3>
+          <p>Senin–Sabtu, 07.30–16.30 WIB. Minggu dan hari libur nasional tutup.</p>
+          <span class="open-status" id="open-status"></span>
+        </div>
+        <div class="info-block">
+          <h3>Penjualan</h3>
+          <p><a id="c-phone" href="#"></a><br><a id="c-email" href="#"></a></p>
+          <a class="btn btn-wa" id="c-wa" target="_blank" rel="noopener" href="#">Chat WhatsApp</a>
+        </div>
+        <div class="map">
+          <iframe id="c-map" title="Peta lokasi pabrik Serat Jati Nusantara" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div>
+        <form class="panel" id="contact-form" novalidate>
+          <h2>Kirim pertanyaan</h2>
+          <div class="field"><label for="k-name">Nama</label><input class="input" id="k-name" autocomplete="name" required><span class="error">Isi nama Anda</span></div>
+          <div class="row-2">
+            <div class="field"><label for="k-email">Email</label><input class="input" id="k-email" type="email" autocomplete="email" required><span class="error">Isi email yang valid</span></div>
+            <div class="field"><label for="k-phone">Telepon <span class="muted">(opsional)</span></label><input class="input" id="k-phone" type="tel" autocomplete="tel"></div>
+          </div>
+          <div class="field">
+            <label for="k-topic">Topik</label>
+            <select class="input" id="k-topic">
+              <option>Pertanyaan produk</option>
+              <option>Kunjungan pabrik</option>
+              <option>Kerja sama / distributor</option>
+              <option>Ekspor</option>
+              <option>Lainnya</option>
+            </select>
+          </div>
+          <div class="field"><label for="k-msg">Pesan</label><textarea class="input" id="k-msg" required minlength="10"></textarea><span class="error">Tulis pesan minimal 10 karakter</span></div>
+          <button class="btn btn-primary" type="submit">Kirim pesan</button>
+        </form>
+        <div id="contact-success" hidden></div>
+
+        <section class="faq" style="margin-top: var(--s-7)">
+          <h2>Pertanyaan umum</h2>
+          <div id="faq"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/kontak.js"></script>
+</body>
+</html>

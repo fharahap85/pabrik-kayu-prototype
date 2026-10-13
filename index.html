@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Serat Jati Nusantara — Pabrik Kayu Gergajian & Olahan, Jepara</title>
+  <meta name="description" content="Pabrik kayu di Jepara: balok, papan, kaso, decking, plywood, dan moulding. Kayu kering oven, legal SVLK, dipotong sesuai ukuran proyek Anda.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+  <header id="site-header" class="site-header"></header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <h1>Kayu kering oven, dipotong sesuai ukuran proyek Anda.</h1>
+          <p class="lead">Balok, papan, decking, dan plywood langsung dari pabrik di Jepara. Setiap batang diberi cap grade dan dikirim lengkap dengan dokumen legalitas.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="produk.html">Lihat katalog kayu</a>
+            <a class="btn btn-ghost" href="kalkulator.html">Hitung kubikasi</a>
+          </div>
+          <dl class="hero-facts">
+            <div><dt>stok siap kirim</dt><dd id="fact-stock">— m³</dd></div>
+            <div><dt>kapasitas oven per bulan</dt><dd>850 m³</dd></div>
+            <div><dt>jenis kayu</dt><dd id="fact-species">—</dd></div>
+          </dl>
+        </div>
+        <div class="hero-log">
+          <div class="species-picker" role="group" aria-label="Ganti jenis kayu pada gambar"></div>
+          <div id="hero-log-svg"></div>
+          <div class="stamp-big" aria-hidden="true"><span id="stamp-species">Jati</span><b>Grade A</b>KD 10–12%</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KATEGORI -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Apa yang kami produksi</h2>
+            <p>Pilih kategori untuk melihat ukuran, grade, dan harga pabrik.</p>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="produk.html">Semua produk</a>
+        </div>
+        <ul class="cat-list" id="cat-list"></ul>
+      </div>
+    </section>
+
+    <!-- PROSES -->
+    <section class="section band-board">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Dari log sampai lokasi proyek</h2>
+            <p>Semua tahap dikerjakan di satu area pabrik seluas 4 hektar.</p>
+          </div>
+        </div>
+        <ol class="process" id="process"></ol>
+      </div>
+    </section>
+
+    <!-- PRODUK UNGGULAN -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Paling sering dipesan</h2>
+            <p>Harga per m³ untuk kayu gergajian, loco pabrik Jepara.</p>
+          </div>
+          <a class="btn btn-ghost btn-sm" href="produk.html?sort=populer">Lihat katalog</a>
+        </div>
+        <div class="pgrid" id="featured"></div>
+      </div>
+    </section>
+
+    <!-- LEGALITAS -->
+    <section class="section band-dark">
+      <div class="container split">
+        <div>
+          <h2>Legal, tercatat, dan bisa ditelusuri</h2>
+          <p class="lead">Kontraktor pemerintah dan eksportir butuh dokumen yang lengkap. Setiap pengiriman kami sertai Nota Angkutan dan dokumen V-Legal, sehingga kayu bisa dipakai untuk proyek tender maupun dikirim ke luar negeri.</p>
+          <a class="btn btn-primary" href="kontak.html">Minta salinan sertifikat</a>
+        </div>
+        <div class="cert-list">
+          <div class="cert"><b>SVLK</b><span>Sistem Verifikasi Legalitas Kayu, KLHK</span></div>
+          <div class="cert"><b>V-Legal</b><span>Dokumen ekspor untuk Uni Eropa, AS, dan Jepang</span></div>
+          <div class="cert"><b>ISPM-15</b><span>Fumigasi palet dan peti kemas ekspor</span></div>
+          <div class="cert"><b>Kiln dry</b><span>6 ruang oven, kadar air terukur per batch</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONI -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><h2>Kata pelanggan kami</h2></div>
+        <div class="quotes" id="quotes"></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <h2>Punya daftar kebutuhan kayu? Kirim ke kami, kami hitungkan.</h2>
+        <div class="hero-actions" style="margin:0">
+          <a class="btn btn-dark" href="penawaran.html">Buat permintaan penawaran</a>
+          <a class="btn btn-ghost" href="https://wa.me/6281200000000" target="_blank" rel="noopener">Chat WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/home.js"></script>
+</body>
+</html>

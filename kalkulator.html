@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulator Kubikasi Kayu — Serat Jati Nusantara</title>
+  <meta name="description" content="Hitung volume m³, berat, dan estimasi harga kayu secara otomatis.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪵</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="kalkulator">
+  <header id="site-header" class="site-header"></header>
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Beranda</a> / Kalkulator kubikasi</nav>
+        <h1>Kalkulator kubikasi kayu</h1>
+        <p>Hitung volume, perkiraan berat, dan harga untuk ukuran apa pun. Tambahkan beberapa ukuran sekaligus, lalu kirim semuanya sebagai permintaan penawaran.</p>
+      </div>
+    </section>
+
+    <div class="container calc-layout">
+      <div>
+        <form class="panel" id="calc-form" novalidate>
+          <h2>Ukuran kayu</h2>
+          <p class="formula">Volume (m³) = tebal (cm) × lebar (cm) × panjang (m) ÷ 10.000</p>
+          <div class="row-2">
+            <div class="field">
+              <label for="c-species">Jenis kayu</label>
+              <select class="input" id="c-species"></select>
+            </div>
+            <div class="field">
+              <label for="c-grade">Grade</label>
+              <select class="input" id="c-grade"></select>
+            </div>
+          </div>
+          <div class="row-3">
+            <div class="field">
+              <label for="c-t">Tebal (cm)</label>
+              <input class="input" id="c-t" type="number" min="0.5" step="0.5" value="6" inputmode="decimal" required>
+              <span class="error">Isi tebal lebih dari 0</span>
+            </div>
+            <div class="field">
+              <label for="c-l">Lebar (cm)</label>
+              <input class="input" id="c-l" type="number" min="0.5" step="0.5" value="12" inputmode="decimal" required>
+              <span class="error">Isi lebar lebih dari 0</span>
+            </div>
+            <div class="field">
+              <label for="c-p">Panjang (m)</label>
+              <input class="input" id="c-p" type="number" min="0.5" step="0.5" value="4" inputmode="decimal" required>
+              <span class="error">Isi panjang lebih dari 0</span>
+            </div>
+          </div>
+          <div class="row-2">
+            <div class="field">
+              <label for="c-qty">Jumlah batang</label>
+              <input class="input" id="c-qty" type="number" min="1" step="1" value="50" inputmode="numeric" required>
+              <span class="error">Minimal 1 batang</span>
+            </div>
+            <div class="field">
+              <label for="c-price">Harga per m³ (Rp)</label>
+              <input class="input" id="c-price" type="number" min="0" step="50000" inputmode="numeric">
+              <span class="hint">Terisi otomatis dari harga pabrik. Boleh diubah.</span>
+            </div>
+          </div>
+          <button class="btn btn-dark" type="submit">Tambahkan ke daftar ukuran</button>
+        </form>
+
+        <div class="panel" style="margin-top: var(--s-5)">
+          <div class="section-head" style="margin-bottom: 0">
+            <h2 style="margin:0">Daftar ukuran</h2>
+            <button class="link-btn" type="button" id="clear-rows" hidden>Kosongkan daftar</button>
+          </div>
+          <div id="rows-empty"><p class="muted" style="margin-top: var(--s-4)">Belum ada ukuran. Isi formulir di atas lalu pilih “Tambahkan ke daftar ukuran”.</p></div>
+          <div class="table-wrap" id="rows-wrap" hidden>
+            <table class="table">
+              <thead><tr><th>Kayu</th><th>Ukuran</th><th class="num">Batang</th><th class="num">Volume</th><th class="num">Harga</th><th><span class="sr-only">Aksi</span></th></tr></thead>
+              <tbody id="rows"></tbody>
+              <tfoot><tr><td colspan="3">Total</td><td class="num" id="rows-vol"></td><td class="num" id="rows-total"></td><td></td></tr></tfoot>
+            </table>
+          </div>
+          <button class="btn btn-primary" type="button" id="send-rows" style="margin-top: var(--s-5)" hidden>Masukkan semua ke daftar penawaran</button>
+        </div>
+      </div>
+
+      <aside class="panel result-panel" aria-live="polite">
+        <h2>Hasil hitung</h2>
+        <dl>
+          <div><dt>Volume per batang</dt><dd id="r-vol1">—</dd></div>
+          <div><dt>Total volume</dt><dd id="r-vol">—</dd></div>
+          <div><dt>Batang per 1 m³</dt><dd id="r-perm3">—</dd></div>
+          <div><dt>Perkiraan berat</dt><dd id="r-weight">—</dd></div>
+          <div><dt>Harga per batang</dt><dd id="r-piece">—</dd></div>
+          <div class="total"><dt>Estimasi harga</dt><dd id="r-total">—</dd></div>
+        </dl>
+        <p class="small" id="r-species-note"></p>
+        <p class="small">Berat dihitung dari berat jenis rata-rata kayu kering. Harga belum termasuk ongkos kirim dan pengawetan.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/kalkulator.js"></script>
+</body>
+</html>
